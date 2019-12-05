@@ -9,9 +9,11 @@ python:
   - "3.8-dev"  # 3.8 development branch
   - "nightly"  # nightly build
 # command to install dependencies
+before_install:
+  - sudo apt-get install libpq-dev python-dev
+  - sudo apt-get install python3-psycopg2
 install:
   - pip install -r backend/requirements.txt
 # command to run tests
 script:
   - pytest
-
